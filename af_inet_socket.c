@@ -121,7 +121,7 @@ static int serve(const char *addr, int port)
 	}
 
 	// listen
-	if (listen(sockfd, 5)) {
+	if (listen(sockfd, 5) < 0) {
 		perror("failed to listen");
 		goto err;
 	}
