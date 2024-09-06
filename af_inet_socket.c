@@ -14,6 +14,12 @@
 #define SERVER_HOST "127.0.0.1"
 #define SERVER_PORT 9999
 
+static void print_usage(const char *cmd)
+{
+	fprintf(stderr, "usage: %s (req|res)", cmd);
+	exit(EXIT_FAILURE);
+}
+
 static void print_msg_with_time(const char *msg1, const char *msg2)
 {
 	struct timespec tp;
@@ -168,11 +174,6 @@ err:
 	exit(EXIT_FAILURE);
 }
 
-static void print_usage(const char *cmd)
-{
-	fprintf(stderr, "usage: %s (req|res)", cmd);
-	exit(EXIT_FAILURE);
-}
 int main(int argc, char **argv)
 {
 	if (argc < 2) {
